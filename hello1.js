@@ -1,13 +1,12 @@
-var http = require('http');
+function hello() {
+};
 
+hello.prototype.myNumber = 2;
 
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Hello World\n");
-});
+hello.prototype.add = function(delta) {
+  if ( isNaN(delta) ) { return NaN };
+  this.myNumber += delta;
+  return this.myNumber;
+};
 
-
-server.listen(8000);
-
-
-console.log("Server running at http://127.0.0.1:8000/");
+module.exports = hello;
