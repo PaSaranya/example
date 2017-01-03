@@ -11,4 +11,4 @@ inputs:
 - name: example
 
 run:
-  path: example/run-unit-tests
+  path: example/run-unit-test
