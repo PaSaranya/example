@@ -1,0 +1,13 @@
+resources:
+  - name: hello_pipeline
+    type: git
+    source:
+      uri: https://github.com/PaSaranya/example.git
+      branch: master
+jobs:
+- name: test_node
+  plan:
+  - get: hello_pipeline
+    trigger: true
+  - task: run-unit-tests
+    file: example/unit_tests.yml
